@@ -1,7 +1,0 @@
-# railway.yaml
-
-services:
-  - name: web
-    type: node
-    env:
-      PORT: 3000

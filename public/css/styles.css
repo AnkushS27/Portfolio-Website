@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overscroll-behavior: none;
 }
 
 /* Navbar styling starts here.. */
@@ -19,17 +20,21 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
+  padding: 10px;
 }
 
 header .logo {
+  position: relative;
   font-size: 24px;
   font-weight: bold;
+  top: -15px;
 }
 
-header .logo a {
-  color: #fff;
-  text-decoration: none;
+header .logo img {
+  position: absolute;
+  z-index: 5;
+  width: 150px;
 }
 
 header nav ul {
@@ -57,18 +62,6 @@ header .contact-info {
   align-items: center;
 }
 
-header .contact-info a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 10px;
-  display: flex;
-  align-items: center;
-}
-
-header .contact-info i {
-  margin-right: 10px;
-}
-
 header .social-media {
   list-style: none;
   margin: 0;
@@ -91,6 +84,12 @@ header .social-media a {
 header .social-media i {
   font-size: 24px;
   margin-right: 5px;
+  transition: transform 0.3s;
+}
+
+header .social-media i:hover {
+  color: #7effff;
+  transform: scale(1.1);
 }
 
 .menu-toggle {
@@ -153,7 +152,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #e6ffff;
+  color: #7effff;
   transform: scale(1.1);
 }
 

@@ -8,6 +8,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+// Routes for different pages
 app.get("/", function(req, res){
     res.render("home");
 });
@@ -20,6 +21,9 @@ app.get("/about", function(req, res){
 });
 app.get("/contact", function(req, res){
     res.render("contact");
+});
+app.get("/blog", function(req, res){
+    res.render("blog");
 });
 
 // var day = "";
