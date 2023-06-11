@@ -29,13 +29,13 @@ header .logo {
   position: relative;
   font-size: 24px;
   font-weight: bold;
-  top: -15px;
+  top: -25px;
 }
 
 header .logo img {
   position: absolute;
   z-index: 5;
-  width: 150px;
+  width: 175px;
 }
 
 header nav ul {
@@ -50,6 +50,7 @@ header nav li {
 }
 
 header nav a {
+  font-size: large;
   color: #fff;
   text-decoration: none;
 }
@@ -224,12 +225,41 @@ nav a:hover {
 
 .Container {
     padding: 100px;
-    background-color: #7b7b7b;
+    background-color: #d2cdcd;
     min-height: 100vh;
 }
 
 .Container h1{
     color: #fff;
+}
+
+/* Blog home page Styling starts here.. */
+.singleBlogContainer {
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 4px;
+}
+
+.singleBlogContainer h1 {
+  margin: 10px 0;
+  color: #000;
+}
+
+.singleBlogContainer .date {
+  margin: 10px 0;
+}
+
+.singleBlogContainer p {
+  margin: 25px 0;
+}
+
+.singleBlogContainer a {
+  text-decoration: none;
+}
+
+.singleBlogContainer a:hover {
+  color: #7effff;
 }
 
 /* Footer Styling starts here.. */

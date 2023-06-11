@@ -2,10 +2,12 @@
 <%- include("partials/header"); -%>
 
     <form action="/compose" method="post" style="display: flex; flex-direction: column;">
-        <label for="">Title</label>
-        <input type="text" name="postTitle" autocomplete="off">
-        <label for="">Post Body</label>
-        <textarea name="postBody" id="" cols="30" rows="10"></textarea>
+        <label for="">Title:</label>
+        <input type="text" name="postTitle" autocomplete="off" required>
+        <label for="">Post Body:</label>
+        <textarea name="postBody" id="" cols="30" rows="10" required></textarea>
+        <label for="">Date:</label>
+        <input type="text" name="postDate" id="" value="<%= currDate %>" readonly>
         <button type="submit">Publish</button>
     </form>
 
