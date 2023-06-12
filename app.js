@@ -6,7 +6,8 @@ const mongoose = require('mongoose');
 const app = express();
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
+app.use(bodyParser.json({ limit: '10mb' }));
 
 app.set('view engine', 'ejs');
 
@@ -37,7 +38,7 @@ const postSchema = {
 const Post = mongoose.model("Post", postSchema);
 
 app.get("/composeBlog", function(req, res){
-    const currDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' }); // Get the current date
+    const currDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month:'numeric', day: 'numeric' }); // Get the current date
     res.render("compose_blog", { currDate: currDate });
 });
 

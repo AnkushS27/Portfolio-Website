@@ -233,6 +233,61 @@ nav a:hover {
     color: #fff;
 }
 
+/* Compose Blog page Styling Starts here.. */
+.composeContainer {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.composeContainer form {
+  width: 100%;
+}
+
+.composeContainer .composeChild {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.composeContainer label{
+  font-size: large;
+  font-weight: bold;
+}
+
+.composeContainer input {
+  border: none;
+  padding: 12px 15px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.postBodyTextArea{
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.composeContainer .postBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.composeContainer button {
+  position: relative;
+  width: 100%;
+  background-color: #3dbbff;
+  padding: 10px;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.composeContainer button:hover{
+  background-color: #38a7e3;
+}
+
+
 /* Blog home page Styling starts here.. */
 .singleBlogContainer {
   background-color: #fff;
@@ -243,11 +298,12 @@ nav a:hover {
 
 .singleBlogContainer h1 {
   margin: 10px 0;
-  color: #000;
+  color: #333;
 }
 
 .singleBlogContainer .date {
   margin: 10px 0;
+  color: #a4a4a4;
 }
 
 .singleBlogContainer p {

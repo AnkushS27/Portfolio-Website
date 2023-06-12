@@ -1,14 +1,60 @@
 
 <%- include("partials/header"); -%>
 
-    <form action="/compose" method="post" style="display: flex; flex-direction: column;">
-        <label for="">Title:</label>
-        <input type="text" name="postTitle" autocomplete="off" required>
-        <label for="">Post Body:</label>
-        <textarea name="postBody" id="" cols="30" rows="10" required></textarea>
-        <label for="">Date:</label>
-        <input type="text" name="postDate" id="" value="<%= currDate %>" readonly>
+<div class="composeContainer">
+    <form action="/compose" method="post">
+        <div class="postTitle composeChild">
+            <label for="">Title:</label>
+            <input type="text" name="postTitle" autocomplete="off" required>
+        </div>
+        <div class="postBody composeChild">
+            <label for="">Post Body:</label>
+            <div class="postBodyTextArea">
+                <div class="quill-toolbar">
+                    <div id="toolbar">
+                        <span class="ql-formats">
+                            <select class="ql-font"></select>
+                            <select class="ql-size"></select>
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-bold"></button>
+                            <button class="ql-italic"></button>
+                            <button class="ql-underline"></button>
+                            <button class="ql-link"></button>
+                            <!-- Add more formatting options as needed -->
+                        </span>
+                        <span class="ql-formats">
+                            <button class="ql-image"></button>
+                        </span>
+                    </div>
+                </div>
+                <div id="postBodyEditor"></div>
+                <textarea name="postBody" style="display:none;"></textarea>
+            </div>
+        </div>
+        <div class="postDate composeChild">
+            <label for="">Date:</label>
+            <input type="text" name="postDate" id="" value="<%= currDate %>" readonly>
+        </div>
         <button type="submit">Publish</button>
     </form>
+</div>
+
+<script>
+    var quill = new Quill('#postBodyEditor', {
+        theme: 'snow',
+        modules: {
+            toolbar: '#toolbar'
+        }
+    });
+
+    var form = document.querySelector('form');
+    var hiddenInput = document.querySelector('textarea[name="postBody"]');
+
+    form.onsubmit = function () {
+        var html = quill.root.innerHTML;
+        hiddenInput.value = html;
+    };
+</script>
 
 <%- include("partials/footer"); -%> 
