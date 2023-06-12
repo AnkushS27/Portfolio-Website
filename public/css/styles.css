@@ -221,7 +221,7 @@ nav a:hover {
   }
 }
 
-
+/* Main container for each page */
 
 .Container {
     padding: 100px;
@@ -231,6 +231,12 @@ nav a:hover {
 
 .Container h1{
     color: #fff;
+}
+
+@media screen and (max-width: 500px){
+  .Container {
+    padding: 80px 5px;
+  }
 }
 
 /* Compose Blog page Styling Starts here.. */
@@ -272,6 +278,12 @@ nav a:hover {
   flex-direction: column;
 }
 
+.ql-editor img {
+  max-width: 100%; /* Limit the width of the image to fit within its container */
+  border-radius: 5px; /* Add rounded corners to the image */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
+}
+
 .composeContainer button {
   position: relative;
   width: 100%;
@@ -308,6 +320,12 @@ nav a:hover {
 
 .singleBlogContainer p {
   margin: 25px 0;
+}
+
+.singleBlogContainer p img {
+  max-width: 100%; /* Limit the width of the image to fit within its container */
+  border-radius: 5px; /* Add rounded corners to the image */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
 }
 
 .singleBlogContainer a {
