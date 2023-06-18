@@ -222,53 +222,51 @@ nav a:hover {
 }
 
 /* Main container for each page */
-
 .Container {
-    padding-top: 80px;
-    background-color: #d2cdcd;
-    min-height: 100vh;
+  background-color: #d2cdcd;
 }
 
 .Container h1{
     color: #fff;
 }
 
-@media screen and (max-width: 500px){
-  .Container {
-    padding: 80px 0 0;
-  }
-}
-
 /* About page Styling starts here */
 section {
     position: relative;
-    min-height: 80vh;
     text-align: center;
+    min-height: 100vh;
 }
 
 .introContainer {
-    padding: 0 100px 0 100px;
+  position: relative;
+    display: flex;
+    padding: 100px 100px 30px;
+    background-color: #d2cdcd;
+    align-items: center;
 }
 
 .introImage, .skillsImage {
-  width: 300px;
+  width: 320px;
 }
 
 .introProfileContainer {
-  display: flex;
   position: relative;
+  width: 60%;
   align-items: center;
 }
 
-.introProfileContainer img {
+.introContainer .profileImage {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: fit-content;
   width: 40%;
   z-index: 2;
 }
 
 .introProfileContainer p {
-  width: 60%;
   font-size: 25px;
-  z-index: 3;
+  margin: 20px 0;
 }
 
 .skillsContainer {
@@ -286,24 +284,169 @@ section {
   color: #000;
 }
 
-@media screen and (max-width: 600px){
-  section {
-    padding: 10px;
-    padding-bottom: 30px;
-    min-height: 90vh;
-  }
-
+@media screen and (max-width: 700px){
   .introContainer {
-    padding: 10px;
+    padding: 100px 10px 0;
+    display: block;
   }
 
-  .introProfileContainer {
-    flex-direction: column-reverse;
-  }
-
-  .introProfileContainer img, .introProfileContainer p {
+  .introContainer .profileImage, .introProfileContainer {
+    position: relative;
     width: 100%;
   }
+}
+
+/* Contact Page styling starts here.. */
+.contact{
+  position: relative;
+  padding: 100px;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('/images/contactBackground.png');
+  background-size: cover;
+}
+
+.contact .contactContent {
+  max-width: 800px;
+  text-align: center;
+}
+
+.contact .contactContent h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.contact .contactContent p {
+  font-weight: 300;
+  color: #fff;
+}
+
+.contactContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.contactContainer .contactInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contactContainer .contactInfo .contactInfoChild {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contactContainer .contactInfo .contactInfoChild .contactIcon {
+  min-width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.contactContainer .contactInfo .contactInfoChild .text {
+  display: flex;
+  margin: 20px;
+  font-size: 16px;
+  color: #fff;
+  flex-direction: column;
+  font-weight: 300;
+}
+
+.contactContainer .contactInfo .contactInfoChild .text h3 {
+  font-weight: 600;
+  color: #00bcd4;
+}
+
+.contactForm {
+  width: 40%;
+  padding: 40px;
+  background: #fff;
+}
+
+.contactForm h2 {
+  font-size: 30px;
+  color: #333;
+  font-weight: 500;
+}
+
+.contactForm .contactInputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contactForm .contactInputBox input,
+.contactForm .contactInputBox textarea{
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid #333;
+  outline: none;
+  resize: none;
+}
+
+.contactForm .contactInputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+
+.contactForm .contactInputBox input:focus ~ span,
+.contactForm .contactInputBox input:valid ~ span,
+.contactForm .contactInputBox textarea:focus ~ span,
+.contactForm .contactInputBox textarea:valid ~ span {
+  color: #e91e63;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+
+@media screen and (max-width: 700px) {
+  .contact {
+    padding: 80px 10px 10px;
+  }
+
+  .contactContainer {
+    flex-direction: column;
+  }
+
+  .contactContainer .contactInfo,  .contactContainer .contactForm{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+
+}
+
+/* Thanks page for conatcting us */
+.thanksContainer {
+  background-color: #fff;
+  display:flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 /* Compose Blog page Styling Starts here.. */
@@ -312,6 +455,10 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 100px 0;
+  min-height: 100vh;
+  background-image: url('/images/contactBackground.png');
+  background-size: cover;
 }
 
 .composeContainer form {
@@ -324,6 +471,7 @@ section {
 }
 
 .composeContainer label{
+  color: #fff;
   font-size: large;
   font-weight: bold;
 }
@@ -338,6 +486,23 @@ section {
 .postBodyTextArea{
   background-color: #fff;
   border-radius: 4px;
+
+}
+
+.ql-toolbar.ql-snow, .ql-container.ql-snow {
+  border: none;
+}
+
+.ql-toolbar.ql-snow {
+  border-bottom: 2px solid #285774;
+}
+
+.ql-snow.ql-toolbar button {
+  background: transparent;
+}
+
+.ql-snow.ql-toolbar button:hover, .ql-snow .ql-toolbar button:hover {
+  padding: 0;
 }
 
 .composeContainer .postBody {
@@ -351,10 +516,11 @@ section {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow effect */
 }
 
-.composeContainer button {
+.composeContainer button, .contactForm button {
   position: relative;
   width: 100%;
-  background-color: #3dbbff;
+  background-color: #3878a0;
+  color: #fff;
   padding: 10px;
   border: none;
   font-weight: bold;
@@ -362,12 +528,19 @@ section {
   cursor: pointer;
 }
 
-.composeContainer button:hover{
-  background-color: #38a7e3;
+.composeContainer button:hover, .contactForm button:hover{
+  background-color: #fff;
+  color: #3878a0;
+  border: 2px solid #3878a0;
+  padding: 8.5px;
 }
 
 
 /* Blog home page Styling starts here.. */
+.blogContainer {
+  padding: 100px 100px 50px;
+}
+
 .singleBlogContainer {
   background-color: #fff;
   padding: 20px;
@@ -401,6 +574,13 @@ section {
 
 .singleBlogContainer a:hover {
   color: #7effff;
+}
+
+
+@media screen and (max-width: 500px){
+  .blogContainer, .composeContainer {
+    padding: 100px 10px 50px;
+  }
 }
 
 /* Footer Styling starts here.. */

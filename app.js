@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
+const twilio = require('twilio');
 
 const app = express();
 
@@ -25,6 +26,33 @@ app.get("/about", function(req, res){
 app.get("/contact", function(req, res){
     res.render("contact");
 });
+
+app.get("/thanksforcontacting", function(req, res){
+    res.render("thanksforcontacting");
+});
+
+
+
+// Contact form
+app.post('/send-message', (req, res) => {
+    const { clientName, clientEmail, clientMessage } = req.body;
+  
+    // Send a notification using Twilio
+    const accountSid = 'AC7f53e5c9c37961a93a51bbc58b526cef';
+    const authToken = 'ab0641e7efcc67ec8ee88060cdeee04e';
+    const client = twilio(accountSid, authToken);
+  
+    client.messages
+      .create({
+        body: `New message from your website\nName: ${clientName}\nEmail: ${clientEmail}\nMessage: ${clientMessage}`,
+        from: '+14067095277',
+        to: '+918869045957',
+      })
+      .then((message) => console.log('Notification sent:', message.sid))
+      .catch((error) => console.error(error));
+      
+      res.redirect("/thanksforcontacting");
+  });
 
 // Blog logic
 mongoose.connect("mongodb+srv://Ankush7163:ankushsingh490@cluster0.f50reqx.mongodb.net/myBlogDB", {useNewUrlParser: true, useUnifiedTopology: true});

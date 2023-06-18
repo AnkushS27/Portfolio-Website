@@ -1,6 +1,54 @@
 
 <%- include("partials/header"); -%>
 
-    <h1>This is a contact page..</h1>
+    <div class="contact">
+        <div class="contactContent">
+            <h1>Contact me!</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum animi laudantium ipsa dignissimos quod? Dolorem voluptatum amet suscipit accusantium distinctio excepturi. Perferendis quidem asperiores facere!</p>
+        </div>
+        <div class="contactContainer">
+            <div class="contactInfo">
+                <div class="contactInfoChild">
+                    <div class="contactIcon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>ABC form no. 34, New Delhi, Delhi - 110086</p>
+                    </div>
+                </div>
+                <div class="contactInfoChild">
+                    <div class="contactIcon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>+91-8869045957</p>
+                    </div>
+                </div>
+                <div class="contactInfoChild">
+                    <div class="contactIcon"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>singhankush153@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form action="/send-message" method="post">
+                    <h2>Send Message</h2>
+                    <div class="contactInputBox">
+                        <input type="text" name="clientName" id="" required>
+                        <span>Full Name</span>
+                    </div>
+                    <div class="contactInputBox">
+                        <input type="text" name="clientEmail" id="" required>
+                        <span>Email</span>
+                    </div>
+                    <div class="contactInputBox">
+                        <textarea name="clientMessage" id="" required autocomplete="off"></textarea>
+                        <span>Type your message...</span>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 <%- include("partials/footer"); -%> 
