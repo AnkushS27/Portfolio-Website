@@ -14,6 +14,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 6;
+  border-bottom: 2px solid #fff;
 }
 
 header .container {
@@ -241,7 +242,8 @@ section {
   position: relative;
     display: flex;
     padding: 100px 100px 30px;
-    background-color: #d2cdcd;
+    background-color: #333;
+    color: #fff;
     align-items: center;
 }
 
@@ -323,6 +325,7 @@ section {
 .contact .contactContent p {
   font-weight: 300;
   color: #fff;
+  font-size: 17px;
 }
 
 .contactContainer {
@@ -368,13 +371,14 @@ section {
 
 .contactContainer .contactInfo .contactInfoChild .text h3 {
   font-weight: 600;
-  color: #00bcd4;
+  color: #7effff;
 }
 
 .contactForm {
   width: 40%;
   padding: 40px;
   background: #fff;
+  border-radius: 5px;
 }
 
 .contactForm h2 {
@@ -438,9 +442,10 @@ section {
 
 }
 
-/* Thanks page for conatcting us */
+/* Thanks page for contacting us */
 .thanksContainer {
-  background-color: #fff;
+  position: relative;
+  background-color: #b1abff;
   display:flex;
   flex-direction: column;
   position: relative;
@@ -449,7 +454,23 @@ section {
   min-height: 100vh;
 }
 
+.thanksContainer p {
+  color: #333;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 20px 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 40px;
+}
+
 /* Compose Blog page Styling Starts here.. */
+.blogContainer {
+  padding: 100px 100px 50px;
+  min-height: 100vh;
+  background: linear-gradient(90deg, hsla(208, 7%, 55%, 1) 0%, hsla(191, 5%, 40%, 1) 100%);
+}
+
 .composeContainer {
   display: flex; 
   flex-direction: column;
@@ -537,8 +558,26 @@ section {
 
 
 /* Blog home page Styling starts here.. */
-.blogContainer {
+.blogPageContainer {
+  padding: 50px 100px 50px;
+  min-height: 100vh;
+  background: linear-gradient(90deg, hsla(208, 7%, 55%, 1) 0%, hsla(191, 5%, 40%, 1) 100%);
+}
+
+.blogIntro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 100px 100px 50px;
+  min-height: 50vh;
+  background-color: #333;
+  color: #fff;
+}
+
+.blogIntro p {
+  margin: 20px 0;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .singleBlogContainer {
@@ -578,8 +617,12 @@ section {
 
 
 @media screen and (max-width: 500px){
-  .blogContainer, .composeContainer {
+  .blogContainer, .composeContainer, .blogIntro {
     padding: 100px 10px 50px;
+  }
+
+  .blogPageContainer {
+    padding: 50px 10px 50px;
   }
 }
 

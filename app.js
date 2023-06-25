@@ -10,6 +10,29 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 app.use(bodyParser.json({ limit: '10mb' }));
 
+app.use((req, res, next) => {
+  const nonce = generateNonce(); // Generate a random nonce value
+
+  res.setHeader(
+    'Content-Security-Policy',
+    `default-src 'self'; style-src 'self' 'unsafe-inline' https://cdn.quilljs.com https://cdnjs.cloudflare.com; script-src 'self' https://cdn.quilljs.com 'nonce-${nonce}'; img-src 'self' data:; font-src 'self' https://cdnjs.cloudflare.com;`
+  );
+
+  res.locals.nonce = nonce; // Make nonce accessible in templates if needed
+
+  next();
+});
+
+function generateNonce() {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let nonce = '';
+  for (let i = 0; i < 16; i++) {
+    nonce += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return nonce;
+}
+
+
 app.set('view engine', 'ejs');
 
 // Routes for different pages

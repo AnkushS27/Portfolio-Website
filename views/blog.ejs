@@ -1,13 +1,17 @@
 
 <%- include("partials/header"); -%>
-<div class="blogContainer">
+<div class="blogIntro">
+    <h1>Discovering the Tapestry of Life: Insights, Inspiration, and Exploration</h1>
+    <p>Welcome to my personal blog, a space where I share thoughts, experiences, and passions. Join me on this journey as we explore art, culture, science, technology, and more. Through personal anecdotes and well-researched insights, I aim to inform, entertain, and inspire. Let's celebrate diversity and the shared human experience as we delve into the tapestry of life. Whether you seek inspiration, knowledge, or relaxation, I warmly welcome you. Thank you for visiting - let the adventure begin!</p>
+</div>
+<div class="blogPageContainer">
 <%  posts.forEach(function(post){ %>
 
     <div class="singleBlogContainer">
         <h1><%=post.title%></h1>
         <div class="date"><%= post.currentDate %></div>
         <p>
-        <%- post.content.substring(0, 100) + " ..." %>
+        <%- post.content.substring(0, 90) + " ..." %>
         <a href="/blog/posts/<%=post._id%>">Read More</a>
         </p>
     </div>
