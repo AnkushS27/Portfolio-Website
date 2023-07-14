@@ -11,5 +11,29 @@
       </ul>
     </div>
 </footer>
+</div>
+<script nonce="<%= nonce %>">
+  window.addEventListener("load", function () {
+    // Hide the preloader after 3 seconds and reveal the content gradually
+    var preloader = document.getElementById("preloader");
+    var content = document.getElementById("content");
+  
+    setTimeout(function () {
+      preloader.style.opacity = "0";
+      preloader.style.transition = "opacity 0.5s ease-in";
+  
+      setTimeout(function () {
+        preloader.style.display = "none";
+        content.style.display = "block";
+        content.style.opacity = "0";
+        content.style.transition = "opacity 0.3s ease-in";
+  
+        setTimeout(function () {
+          content.style.opacity = "1";
+        }, 100);
+      }, 500);
+    }, 3500);
+  });
+</script>
 </body>
 </html>
